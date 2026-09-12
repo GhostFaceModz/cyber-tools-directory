@@ -131,6 +131,10 @@
   .badge-utility { background: #1d1d1d; color: var(--muted); }
   .badge-gps { background: #1a2d2d; color: #79c0ff; }
   .badge-url { background: #2d1d1a; color: #f0883e; }
+  .badge-spyware { background: #3d1a2d; color: #f778ba; }
+  .badge-wifi { background: #1a3d2d; color: #7ee787; }
+  .badge-email { background: #2d1a3d; color: #d2a8ff; }
+  .badge-ai { background: #1d1d3d; color: #79c0ff; }
 
   .card h3 {
     font-size: 1.1rem;
@@ -244,7 +248,7 @@
   <div class="header">
     <h1>⚔ Cybersecurity & OSINT Tools</h1>
     <p>Curated directory of open-source intelligence, pentesting, and security tools</p>
-    <span class="count">35 tools across 11 categories</span>
+    <span class="count">51 tools across 14 categories</span>
   </div>
 
   <div class="categories" id="filters">
@@ -258,7 +262,10 @@
     <button class="cat-btn" data-cat="learning">Learning</button>
     <button class="cat-btn" data-cat="hardware">Hardware</button>
     <button class="cat-btn" data-cat="utility">Utility</button>
-  </div>
+    <button class="cat-btn" data-cat="spyware">Spyware</button>
+    <button class="cat-btn" data-cat="wifi">WiFi</button>
+    <button class="cat-btn" data-cat="email">Email</button>
+    <button class="cat-btn" data-cat="ai">AI</button>
 
   <div class="grid" id="grid"></div>
 
@@ -571,6 +578,159 @@ const tools = [
     categories: ['osint', 'utility'],
     tags: ['Linux', 'Pentesting', 'GhostFace', 'Custom Distro/Toolkit'],
     readme: 'https://github.com/GhostFaceMods/GhostFaceZen/blob/main/README.md'
+  },
+// DDOS (new)
+  {
+    name: 'DDos-Attack',
+    owner: 'Ha3MrX',
+    url: 'https://github.com/Ha3MrX/DDos-Attack',
+    desc: 'Python-based DDoS attack script for online services. Simple to use with single-command execution. Supports configurable target and attack parameters.',
+    categories: ['ddos'],
+    tags: ['Python', 'DDoS', 'Simple', 'CLI'],
+    readme: 'https://github.com/Ha3MrX/DDos-Attack/blob/master/README.md'
+  },
+  {
+    name: 'KARMA-DDoS',
+    owner: 'HyukIsBack',
+    url: 'https://github.com/HyukIsBack/KARMA-DDoS',
+    desc: 'DDoS attack panel with multiple bypass methods — Cloudflare UAM/CAPTCHA/BFM/NOSEC bypass, Google Shield, V Shield, Amazon protection bypass. Both Layer 7 and Layer 4 attacks.',
+    categories: ['ddos'],
+    tags: ['DDoS', 'Cloudflare Bypass', 'Multi-Method', 'Python'],
+    readme: 'https://github.com/HyukIsBack/KARMA-DDoS/blob/main/README.md'
+  },
+  {
+    name: 'hping3',
+    owner: 'Kali Linux',
+    url: 'https://www.kali.org/tools/hping3/',
+    desc: 'Powerful command-line TCP/IP packet assembler/analyzer. Used for DDoS testing via ICMP floods, SYN floods, and custom packet crafting. Commands: hping3 -S -p 80 --flood --rand-source <IP>',
+    categories: ['ddos', 'network'],
+    tags: ['Packet Crafting', 'SYN Flood', 'ICMP Flood', 'Kali Linux'],
+  },
+
+  // WIFI
+  {
+    name: 'wifi-hacking.py',
+    owner: 'akashblackhat',
+    url: 'https://github.com/akashblackhat/wifi-hacking.py',
+    desc: 'Multi-function WiFi hacking tool. Supports monitor mode, handshake capture, WPA/WPA2 cracking with rockyou.txt, custom wordlists, WPS attacks, and integrates with Nmap, Metasploit, Hydra, and more.',
+    categories: ['wifi'],
+    tags: ['WiFi', 'Handshake', 'WPA/WPA2', 'Monitor Mode', 'Python'],
+    readme: 'https://github.com/akashblackhat/wifi-hacking.py/blob/main/README.md'
+  },
+
+  // SPYWARE
+  {
+    name: 'Rendercam',
+    owner: 'render437',
+    url: 'https://github.com/render437/rendercam',
+    desc: 'Creates fake video call websites (Google Meet, Zoom, Discord) that secretly captures users through their webcam. Includes IP logging, GPS location capture, and cloudflared tunneling.',
+    categories: ['spyware', 'phishing'],
+    tags: ['Camera Capture', 'Fake Call', 'Webcam', 'Phishing', 'Bash'],
+    readme: 'https://github.com/render437/rendercam/blob/main/README.md'
+  },
+  {
+    name: 'CamPhish',
+    owner: 'techchipnet',
+    url: 'https://github.com/techchipnet/CamPhish',
+    desc: 'Grab cam shots from target phone front camera or PC webcam by sending a phishing link. Includes GPS location tracking, festival/Youtube TV templates, and cloudflared tunneling.',
+    categories: ['spyware', 'phishing'],
+    tags: ['Camera', 'GPS', 'Phishing', 'Tunneling', 'Bash'],
+    readme: 'https://github.com/techchipnet/CamPhish/blob/master/README.md'
+  },
+
+  // GPS / TRACKING
+  {
+    name: 'HOUND',
+    owner: 'techchipnet',
+    url: 'https://github.com/techchipnet/hound',
+    desc: 'Lightweight information gathering tool that captures exact GPS coordinates of a target device. Also grabs device model, OS, CPU cores, screen resolution, browser info, and ISP data.',
+    categories: ['osint', 'gps'],
+    tags: ['GPS Location', 'Device Info', 'Geolocation', 'PHP', 'Bash'],
+    readme: 'https://github.com/techchipnet/hound/blob/main/README.md'
+  },
+
+  // EMAIL
+  {
+    name: 'EST - Email Spoofing Tool',
+    owner: 'TechSky-Code',
+    url: 'https://github.com/TechSky-Code/EST',
+    desc: 'Professional email security assessment framework. Multi-threaded SMTP server with 5 realistic attack scenarios (CEO fraud, IT helpdesk, PayPal, Microsoft 365, Bank Alert). Generates audit logs and assessment reports.',
+    categories: ['email'],
+    tags: ['Email Spoofing', 'SMTP', 'Security Assessment', 'Python'],
+    readme: 'https://github.com/TechSky-Code/EST/blob/main/README.md'
+  },
+
+  // ALL-IN-ONE / UTILITY
+  {
+    name: 'FSOCIETY',
+    owner: 'gdscsmit',
+    url: 'https://github.com/gdscsmit/fsociety',
+    desc: 'Mr. Robot-inspired all-in-one ethical hacking toolkit. Includes modules for reconnaissance, scanning, exploitation, and post-exploitation. Python3-based with easy menu-driven interface.',
+    categories: ['utility'],
+    tags: ['All-in-One', 'Mr. Robot', 'Python3', 'Menu-Driven'],
+    readme: 'https://github.com/gdscsmit/fsociety/blob/main/README.md'
+  },
+  {
+    name: 'ALHacking',
+    owner: '4lbH4cker',
+    url: 'https://github.com/4lbH4cker/ALHacking',
+    desc: 'Albanian hacking toolkit for ethical hacking — social media attacks, phone info, Gmail attack, phone number attack, user discovery, webcam hack, and DDoS attacks.',
+    categories: ['utility', 'social'],
+    tags: ['All-in-One', 'Social Media', 'DDoS', 'Phone Info', 'Bash'],
+    readme: 'https://github.com/4lbH4cker/ALHacking/blob/main/README.md'
+  },
+  {
+    name: 'Blackice',
+    owner: 'blackice-x',
+    url: 'https://github.com/blackice-x/blackice-x',
+    desc: 'Multi-purpose hacking tool for cracking, spamming, and webcam capture. Runs as a bash script with automated setup and menu-driven operations.',
+    categories: ['utility', 'social'],
+    tags: ['Cracking', 'Spam', 'Webcam', 'Bash', 'All-in-One'],
+  },
+  {
+    name: 'SocialBox-Termux (Vannoor)',
+    owner: 'vannoorsab',
+    url: 'https://github.com/vannoorsab/SocialBox-Termux',
+    desc: 'Social media brute-force attack framework for Termux. Targets Facebook, Gmail, Instagram, and Twitter accounts with wordlist-based password attacks.',
+    categories: ['social'],
+    tags: ['Brute Force', 'Facebook', 'Gmail', 'Instagram', 'Twitter'],
+    readme: 'https://github.com/vannoorsab/SocialBox-Termux/blob/main/README.md'
+  },
+
+  // AI
+  {
+    name: 'Terminal Antigravity IDE AI',
+    owner: 'huihui_ai / Ollama',
+    url: 'https://ollama.com/library/huihui_ai/qwen2.5-abliterate',
+    desc: 'Locally-run unrestricted AI model via Ollama. Uses abliterated Qwen2.5 14B model for uncensored AI assistance in the terminal. Run: ollama run huihui_ai/qwen2.5-abliterate:14b',
+    categories: ['ai', 'utility'],
+    tags: ['Local LLM', 'Unrestricted', 'Ollama', 'Qwen2.5', 'Terminal'],
+  },
+  {
+    name: 'Discord AI (Unrestricted Server)',
+    owner: 'Community',
+    url: '#',
+    desc: 'Unrestricted Node.js AI Discord bot server. Runs locally with TLS bypass for self-signed certs. Launch: $env:NODE_TLS_REJECT_UNAUTHORIZED="0"; node server.js (Windows PowerShell).',
+    categories: ['ai'],
+    tags: ['Discord Bot', 'Unrestricted', 'Node.js', 'Local Server'],
+  },
+
+  // KALI COMMANDS / LEARNING
+  {
+    name: 'Kali Root Enable',
+    owner: 'Kali Linux',
+    url: 'https://www.kali.org/docs/general-use/enabling-root/',
+    desc: 'Enable root account on Kali Linux permanently. Commands: sudo passwd (set root pw), sudo apt -y install kali-root-login. Also configure SSH root login via /etc/ssh/sshd_config.',
+    categories: ['learning', 'utility'],
+    tags: ['Kali Linux', 'Root', 'SSH', 'Administration'],
+  },
+  {
+    name: 'Python3 Install Guide',
+    owner: 'The Hitchhiker\'s Guide',
+    url: 'https://docs.python-guide.org/starting/install3/linux/',
+    desc: 'Guide for installing Python 3 on Linux. Methods: apt install python3.6, deadsnakes PPA (python3.8), dnf install python3 (Fedora). Includes pip setup and virtualenv management.',
+    categories: ['learning', 'utility'],
+    tags: ['Python3', 'Installation', 'Linux', 'Guide'],
   },
 ];
 
